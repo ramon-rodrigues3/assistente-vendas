@@ -30,6 +30,13 @@ def buscar_mensagens(id):
     mensagens_formatadas.reverse()
     return mensagens_formatadas
 
+def buscar_user():
+    body = {}
+    resposta = requests.post(URL_WEBHOOK + "user.current.json", headers=HEADERS, json=body)
+    usuario = resposta.json()
+    return usuario['result']
+
+
 def buscar_mensagens_melhorado(id):
     body = {
         "DIALOG_ID": id

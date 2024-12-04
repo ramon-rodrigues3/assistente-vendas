@@ -60,6 +60,7 @@ def adicionar_mensagem(chat_ui, conversa, client, chat_mensagens, input):
         st.session_state["chat_mensagens"] = chat_mensagens
 
 def assistente_vendas():
+    st.header(app.buscar_user())
     client = openai.Client()
     
     conversa = app.buscar_mensagens_melhorado(st.session_state.get("id_conversa"))
